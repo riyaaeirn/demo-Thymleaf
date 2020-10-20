@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Orchestrator Workflow</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/fedex.css" th:href="@{/css/fedex.css}" />
+<script type="text/javascript" src="../../js/fedex.js" media="all"
+	th:src="@{/js/fedex.js}"></script>
+
+</head>
+<body>
+	<div th:insert="index :: index"></div>
+
+
+
+
+	<div class="main">
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+
+					<th class="table-info">Workflow ID</th>
+					<th >Workflow Name</th>
+					<th class="table-info">Workflow Created By</th>
+					<th >Workflow Status
+					<th class="table-info">Actions</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="workflow : ${listWorkflows}">
+					<td th:text="${workflow.id}"></td>
+					<td th:text="${workflow.name}"></td>
+					<td th:text="${workflow.user}"></td>
+					<td th:text="${workflow.status}"></td>
+					<td><a th:href="@{/deleteWorkflow/{id}(id=${workflow.id})}"
+						class="btn btn-danger">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+
+</body>
+</html>

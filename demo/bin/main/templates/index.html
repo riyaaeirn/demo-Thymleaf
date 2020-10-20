@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Orchestrator Workflow Management</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/fedex.css" th:href="@{/css/fedex.css}" />
+<script type="text/javascript" src="../../js/fedex.js" media="all"
+	th:src="@{/js/fedex.js}"></script>
+
+</head>
+<body>
+	<div th:fragment="index" class="index">
+
+
+		<div class="sidenav">
+<h4>Goal Diggers</h4>
+<br>
+<br>
+<br>
+			<button class="dropdown-btn"  th:onclick="dropdownfun();">
+				WorkFlow <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-container">
+				<a th:href="@{/saveWokflowForm}"> Add Workflows </a> <a
+					th:href="@{/viewWorkflowForm}">View Workflow</a><a
+					th:href="@{/updateWorkflowForm}">Update Workflow</a> <a
+					th:href="@{/deleteWorkflowForm}">Delete Workflow</a>
+
+			</div>
+		</div>
+
+		<div class="main">
+
+
+			<div class="row">
+
+				<span class="col-sm-8" style="padding-top: 25px"> <font
+					size="6"> <b>Fedex Ground Rating Orchestrator</b>
+				</font>
+				</span> <span class="col-sm-2" style="margin-right: -11px;"> <img
+					th:src="@{/images/fedexlogo.png}" src="../images/fedexlogo.png"
+					height="60" width="200px">
+				</span>
+			</div>
+
+			</span>
+		</div>
+	</div>
+	<div align="center">
+		<a th:href="@{/displayBarGraph}"> <img
+			th:src="@{/images/barChart.jpg}" src="../images/barChart.jpg"
+			height="200" width="400px"></a> <br /> <br /> <a
+			th:href="@{/displayPieChart}"><img
+			th:src="@{/images/pieChart.png}" src="../images/pieChart.png"
+			height="200" width="400px"></a>
+	</div>
+
+
+
+
+
+</body>
+</html>
